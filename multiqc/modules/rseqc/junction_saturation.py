@@ -55,7 +55,10 @@ def parse_reports(self):
             self.junction_saturation_all_pct[s_name] = OrderedDict()
             self.junction_saturation_known_pct[s_name] = OrderedDict()
             self.junction_saturation_novel_pct[s_name] = OrderedDict()
-            total = self.junction_saturation_all[s_name].values()[-1]
+            # get last value of the dictionary
+            total = None
+            for total in self.junction_saturation_all[s_name].values() :
+              pass
             if total == 0:
                 empty_datasets += 1
                 continue
